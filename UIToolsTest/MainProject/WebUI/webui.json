@@ -1,0 +1,228 @@
+{
+  "version": "4.67.0",
+  "application": {
+    "aimms.widget.type": {
+      "literal": "application"
+    },
+    "browser.language": {
+      "aimms": {
+        "contents": [
+          "webui::ClientBrowserLanguage"
+        ]
+      }
+    },
+    "browser.name": {
+      "aimms": {
+        "contents": [
+          "webui::ClientBrowserName"
+        ]
+      }
+    },
+    "browser.timezone": {
+      "aimms": {
+        "contents": [
+          "webui::BrowserTimeZone"
+        ]
+      }
+    },
+    "ignoredst": {
+      "aimms": {
+        "contents": [
+          "webui::IgnoreDST"
+        ]
+      }
+    },
+    "pages": {
+      "literal": {
+        "name": "root",
+        "slug": "root",
+        "children": [
+          {
+            "name": "Main Project",
+            "slug": "main_project",
+            "children": [
+              {
+                "name": "home",
+                "slug": "home",
+                "type": "pagev2-grid",
+                "children": []
+              },
+              {
+                "name": "scalars",
+                "type": "pagev2-grid",
+                "slug": "scalars",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "theme.classic": {
+      "literal": "NOT_ALLOWED"
+    },
+    "timezone": {
+      "aimms": {
+        "contents": [
+          "webui::DisplayTimeZone"
+        ]
+      }
+    }
+  },
+  "layouts/custom_13ab2963-9527-499b-883e-3ed9cb2271e5": {
+    "definition": {
+      "literal": {
+        "componentName": "Grid",
+        "props": {
+          "gridTemplateColumns": "1fr",
+          "gridTemplateRows": "1fr 1fr",
+          "gridTemplateAreas": "\"area-a\" \"area-b\""
+        },
+        "items": [
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-a",
+              "name": "Area A",
+              "gridAutoFlow": "column"
+            }
+          },
+          {
+            "componentName": "WidgetArea",
+            "props": {
+              "gridArea": "area-b",
+              "name": "Area B",
+              "gridAutoFlow": "row"
+            }
+          }
+        ]
+      }
+    },
+    "displayName": {
+      "literal": "Layout1 Copy"
+    }
+  },
+  "pages/home": {
+    "aimms.widget.type": {
+      "literal": "pagev2-grid"
+    },
+    "bindings": {
+      "literal": []
+    },
+    "layoutId": {
+      "literal": "Layout9"
+    },
+    "widgets": {
+      "literal": []
+    }
+  },
+  "pages/scalars": {
+    "aimms.widget.type": {
+      "literal": "pagev2-grid"
+    },
+    "bindings": {
+      "literal": [
+        {
+          "widgetUri": "scalar_scalars",
+          "gridArea": "area-a",
+          "dndId": "area-ascalar_scalars0"
+        },
+        {
+          "widgetUri": "button_test_progress",
+          "gridArea": "area-b",
+          "dndId": "area-bbutton_test_progress1"
+        },
+        {
+          "widgetUri": "button_test_notification",
+          "gridArea": "area-b",
+          "dndId": "Unassigned widgetsbutton_test_notification"
+        }
+      ]
+    },
+    "layoutId": {
+      "literal": "custom_13ab2963-9527-499b-883e-3ed9cb2271e5"
+    },
+    "widgets": {
+      "literal": [
+        {
+          "uri": "scalar_scalars",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "button_test_progress",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        },
+        {
+          "uri": "button_test_notification",
+          "layoutInfo": {
+            "width": "2",
+            "height": "1"
+          }
+        }
+      ]
+    }
+  },
+  "widgets/button_test_notification": {
+    "action": {
+      "literal": {
+        "type": "procedure",
+        "value": "pr_testNotification"
+      }
+    },
+    "aimms.widget.type": {
+      "literal": "button"
+    },
+    "name": {
+      "literal": "button_test_notification"
+    },
+    "title": {
+      "literal": "button_test_notification"
+    }
+  },
+  "widgets/button_test_progress": {
+    "action": {
+      "literal": {
+        "type": "procedure",
+        "value": "pr_testProgress"
+      }
+    },
+    "aimms.widget.type": {
+      "literal": "button"
+    },
+    "name": {
+      "literal": "button_test_progress"
+    },
+    "title": {
+      "literal": "button_test_progress"
+    }
+  },
+  "widgets/scalar_scalars": {
+    "aimms.widget.type": {
+      "literal": "scalar"
+    },
+    "contents": {
+      "aimms": {
+        "contents": [
+          "a",
+          "b",
+          "c"
+        ]
+      }
+    },
+    "contents.numdecimals": {
+      "literal": 0
+    },
+    "name": {
+      "literal": "scalar_scalars"
+    },
+    "views": {
+      "literal": {}
+    }
+  }
+}

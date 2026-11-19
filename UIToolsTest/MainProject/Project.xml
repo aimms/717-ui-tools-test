@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<Project AimmsVersion="26.1.4.12 unicode x64" ProjectUUID="8A1685FE-C7FA-48BB-B8BA-0F82EFB86C50">
+	<ModelFileName>NotificationManagerTest.ams</ModelFileName>
+	<AutoSaveAndBackup>
+		<DataBackup AtRegularInterval="true" EveryNMinutes="15" NumBackupsDatedToday="3" NumDaysBeforeToday="3" />
+	</AutoSaveAndBackup>
+</Project>
