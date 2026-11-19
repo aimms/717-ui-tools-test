@@ -1,0 +1,109 @@
+## ams_version=1.0
+
+Model Main_NotificationManagerTest {
+	Section Quantities_and_Units {
+		Comment: {
+			"This section contains all the units and quantities that are added automatically by AIMMS.
+			It is recommended to declare all your quantities here."
+		}
+		Quantity SI_Time_Duration {
+			BaseUnit: s;
+			Conversions: minute->s : #-># * 60;
+			Comment: {
+				"Expresses the value for the duration of periods.
+				
+				The unit s has been added automatically because it is a required unit for AimmsWebUI.
+				
+				The unit minute has been added automatically because it is a required unit for AimmsWebUI."
+			}
+		}
+	}
+	Section App_Start_Stop {
+		Procedure MainInitialization {
+			Body: {
+				ProfilerStart();
+			}
+			Comment: "Add initialization statements here that do NOT require any library being initialized already.";
+		}
+		Procedure PostMainInitialization {
+			Comment: {
+				"Add initialization statements here that require that the libraries are already initialized properly,
+				or add statements that require the Data Management module to be initialized."
+			}
+		}
+		Procedure PreMainTermination {
+			Body: {
+				return 1;
+			}
+			Comment: {
+				"Add termination statements here that require all libraries to be still alive.
+				Return 1 if you allow the termination sequence to continue.
+				Return 0 if you want to cancel the termination sequence."
+			}
+		}
+		Procedure MainTermination {
+			Body: {
+				return 1;
+			}
+			Comment: {
+				"Add termination statements here that do not require all libraries to be still alive.
+				Return 1 to allow the termination sequence to continue.
+				Return 0 if you want to cancel the termination sequence.
+				It is recommended to only use the procedure PreMainTermination to cancel the termination sequence and let this procedure always return 1."
+			}
+		}
+	}
+	Section Business_model {
+		Parameter a {
+			InitialData: 3;
+		}
+		Parameter b {
+			InitialData: 4;
+		}
+		Parameter c {
+			InitialData: 5;
+		}
+	}
+	Procedure MainExecution;
+	Procedure pr_testNotification {
+		Body: {
+			
+			if a < b then
+				uit::pr_addNotification(
+					sp_message       :  "a less than b", 
+					ep_severity      :  'info', 
+					bp_preventsSolve :  0, 
+					ep_page1         :  'scalars', 
+					ep_page2         :  '');
+			endif;
+			
+			if b < c then
+				uit::pr_addNotification(
+					sp_message       :  "b less than c", 
+					ep_severity      :  'warning', 
+					bp_preventsSolve :  1, 
+					ep_page1         :  'scalars', 
+					ep_page2         :  '');
+			endif;
+		}
+	}
+	Procedure pr_testProgress {
+		Body: {
+			uit::pr_DialogProgress(
+				message    :  "got started", 
+				percentage :  10);
+			delay(10);
+			uit::pr_DialogProgress(
+				message    :  "on my way", 
+				percentage :  30);
+			delay(10);
+			uit::pr_DialogProgress(
+				message    :  "getting there", 
+				percentage :  70);
+			delay(10);
+			uit::pr_DialogProgress(
+				message    :  "", 
+				percentage :  0);
+		}
+	}
+}

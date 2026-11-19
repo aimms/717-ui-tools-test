@@ -1,0 +1,3 @@
+[submodule "UIToolsTest/libUITools"]
+	path = UIToolsTest/libUITools
+	url = git@gitlab.aimms.com:aimms/user-support/how-to-projects/715-libuitools.git

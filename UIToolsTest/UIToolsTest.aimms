@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<References AIMMS_Version="26.8.1.2 (x64)">
+	<MainProject Path="MainProject" />
+	<Library System="true" Path="AimmsPro" />
+	<RepositoryLibrary UUID="69378F70-E906-486F-8F2C-1D606AEB9669" Name="WebUI" Version="26.10.1.0" />
+	<Library Path="libUITools" />
+</References>
