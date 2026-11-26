@@ -20,9 +20,6 @@ Model Main_NotificationManagerTest {
 	}
 	Section App_Start_Stop {
 		Procedure MainInitialization {
-			Body: {
-				ProfilerStart();
-			}
 			Comment: "Add initialization statements here that do NOT require any library being initialized already.";
 		}
 		Procedure PostMainInitialization {
@@ -67,6 +64,9 @@ Model Main_NotificationManagerTest {
 	Procedure MainExecution;
 	Procedure pr_testNotification {
 		Body: {
+			! Start from an empty list, so each run shows only the current findings.
+			uit::pr_clearNotifications ;
+			
 			
 			if a < b then
 				uit::pr_addNotification(
